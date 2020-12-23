@@ -2,6 +2,7 @@
  
 {% block content %}
 <p>Посты пользователя {{ blog.author }}</p>
+<p><a href="">Подписаться</a> (Не реализовано/WIP)</p>
   {% for blog in object_list %}
     <div class="blog-entry">
       <h2><a href="{% url 'blog_detail' blog.pk %}">{{ blog.title }}</a></h2>

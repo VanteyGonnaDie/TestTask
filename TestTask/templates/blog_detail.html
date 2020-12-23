@@ -5,7 +5,7 @@
     <h2>{{ blog.title }}</h2>
     <p>{{ blog.blog_text }}</p>
     <p>{{ blog.blog_date }}</p>
-    <p>{{ blog.author }}</p>
+    <p><a href="{% url 'blogs_by_author' author.pk %}">{{ blog.author }}</a></p>
   </div>
 
 <p><a href="{% url 'blog_delete' blog.pk %}">Удалить пост</a></p>

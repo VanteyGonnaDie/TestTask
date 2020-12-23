@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Удалить пост</h1>
+{% if user.is_authenticated %}
+        <h1>Удалить пост</h1>
     <form action="" method="post">{% csrf_token %}
       <p>Вы точно хотите удалить: "{{ blog.title }}"?</p>
       <input type="submit" value="Подтвердить" />
     </form>
+      {% else %}
+        <p>Вы должны быть авторизированы для выполнения.</p>
+        <a href="{% url 'login' %}">Войти</a>
+      {% endif %}
 {% endblock content %}
