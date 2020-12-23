@@ -21,6 +21,8 @@
         <p>Вы не авторизированы.</p>
         <a href="{% url 'login' %}">Войти</a>
       {% endif %}
+    <p><a href="{% url 'bloggers' %}">Список блоггеров</a></p>
+
     <div>
       {% block content %}
       {% endblock content %}
