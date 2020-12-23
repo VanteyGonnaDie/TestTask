@@ -1,0 +1,13 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+ 
+{% block content %}
+  {% for blog in object_list %}
+    <div class="blog-entry">
+      <h2><a href="">{{ blog.title }}</a></h2>
+      <p>{{ blog.blog_text }}</p>
+      <p>{{ blog.blog_date }}</p>
+      <p>{{ blog.author }}</p>
+    </div>
+  {% endfor %}
+{% endblock content %}

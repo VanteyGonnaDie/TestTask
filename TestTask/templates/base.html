@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  {% block head %}
-  <title>Title</title>
-  {% endblock %}
-</head>
-<body>
-  {% block body %}
-  {% endblock %}
-</body>
+<!-- templates/base.html -->
+<html>
+  <head>
+    <title>Тестовый блог</title>
+  </head>
+  <body>
+    <header>
+      <h1><a href="{% url 'home' %}">Тестовый блог</a></h1>
+    </header>
+    <div>
+      {% block content %}
+      {% endblock content %}
+    </div>
+  </body>
 </html>
