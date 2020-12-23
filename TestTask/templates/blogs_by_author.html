@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
  
 {% block content %}
-<p>Посты пользователя {{ blog.author }}</p>
+<p>Посты пользователя {{ author }}</p>
 <p><a href="">Подписаться</a> (Не реализовано/WIP)</p>
   {% for blog in object_list %}
     <div class="blog-entry">
