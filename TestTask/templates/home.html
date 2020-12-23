@@ -4,7 +4,7 @@
 {% block content %}
   {% for blog in object_list %}
     <div class="blog-entry">
-      <h2><a href="">{{ blog.title }}</a></h2>
+      <h2><a href="{% url 'blog_detail' blog.pk %}">{{ blog.title }}</a></h2>
       <p>{{ blog.blog_text }}</p>
       <p>{{ blog.blog_date }}</p>
       <p>{{ blog.author }}</p>

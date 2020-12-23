@@ -1,0 +1,12 @@
+<!-- templates/blog_detail.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="blog-entry">
+    <h2>{{ blog.title }}</h2>
+    <p>{{ blog.blog_text }}</p>
+    <p>{{ blog.blog_date }}</p>
+    <p>{{ blog.author }}</p>
+  </div>
+
+{% endblock content %}
