@@ -13,20 +13,20 @@
       <div class="nav-right">
           {% if user.is_authenticated %}
         <p>Привет {{ user.username }}!</p>
-        <p><a href="{% url 'logout' %}">Выйти</a></p>
+        <h3><a href="{% url 'logout' %}">Выйти</a></h3>
       {% else %}
         <p>Вы не авторизированы.</p>
-        <a href="{% url 'login' %}">Войти</a>
+        <h3><a href="{% url 'login' %}">Войти</a></h3>
       {% endif %}
         </div>
     </header>
     
       {% if user.is_authenticated %}
-        <a href="{% url 'blog_new' %}">Добавить новый пост в блог</a>
-        <p><a href="{% url 'blogs_by_user' user.pk %}">Мой блог</a></p>
-        <p><a href="">Мои подписки</a>(Не реализовано/WIP)</p>
+        <h3><a href="{% url 'blog_new' %}">Добавить новый пост в блог</a></h3>
+        <h3><a href="{% url 'blogs_by_user' user.pk %}">Мой блог</a></h3>
+        <h3><a href="{% url 'user_subscription' %}">Мои подписки</a>(Не реализовано/WIP)</h3>
       {% endif %}
-    <p><a href="{% url 'bloggers' %}">Список авторов</a></p>
+    <h3><a href="{% url 'bloggers' %}">Список авторов</a></h3>
 
     <div>
       {% block content %}

@@ -32,6 +32,3 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
 
-#class BlogSubscription(models.Model):
-#    subscription = models.ForeignKey(Blog,on_delete=models.SET_NULL, null=True)
-    

@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
  
 {% block content %}
-<p>Посты пользователя {{ blog.id  }}:{{blog.author}}</p>
-<p><a href="">Подписаться</a> (Не реализовано/WIP)</p>
+
   {% for blog in object_list %}
     <div class="blog-entry">
       <h2><a href="{% url 'blog_detail' blog.pk %}">{{ blog.title }}</a></h2>
       <p>{{ blog.blog_text }}</p>
       <p>{{ blog.blog_date }}</p>
-      
+      <p>{{ blog.author }}</p>
     </div>
   {% endfor %}
 {% endblock content %}
