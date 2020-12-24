@@ -2,18 +2,14 @@
 
 {% block content %}
     <h1>Все авторы</h1>
-
     {% if blogauthor_list %}
     <ul>
-
       {% for author in blogauthor_list %}
       <li>
         <a href="{% url 'blogs_by_author' author.pk %}">{{ author }}</a>
       </li>
       {% endfor %}
-
     </ul>
-
     {% else %}
       <p>Пока авторов нет</p>
     {% endif %}       

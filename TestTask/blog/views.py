@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
 from .models import Blog,BlogAuthor
 from django.views.generic import ListView, DetailView
@@ -33,5 +34,13 @@ class BlogsByAuthor(ListView):
     template_name = 'blogs_by_author.html'
     def get_queryset(self):
         id =self.kwargs['pk']
+        target = get_object_or_404(BlogAuthor, pk=id)
+        return Blog.objects.filter(author=target)
+
+class MyBlog(ListView):
+    model = Blog,BlogAuthor
+    template_name = 'blogs_by_user.html'
+    def get_queryset(self):
+        id = self.kwargs['pk']
         target = get_object_or_404(BlogAuthor, pk=id)
         return Blog.objects.filter(author=target)
